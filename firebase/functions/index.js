@@ -32,10 +32,10 @@ exports.sendNotif = functions.database.ref('/app_data/devices/{deviceId}/nearby_
         console.log('No new nearby devices for ', {deviceId}, ', will bypass notifications.');
         return admin.database().ref('app_data/lastnotified').set(context.timestamp);
       }
-
       var deviceIds;
       for(device in newVal){
         deviceIds.push(device['deviceId']);
+        console.log("device token: ", admin.database().ref('/app_data/devices/'+device['deviceId']+'/device_token'));
       }
 
 
