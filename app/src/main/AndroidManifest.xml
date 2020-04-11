@@ -17,14 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".IntroActivity">
+        <activity android:name=".ui.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.MainActivity"/>
 
         <!-- [START fcm_default_icon] -->
         <!--
@@ -49,7 +49,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" /> <!-- [END fcm_default_channel] -->
         <service
-            android:name=".Covid19TrackerService"
+            android:name=".services.Covid19TrackerService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE"></service> <!-- [START firebase_service] -->
         <service
@@ -65,7 +65,7 @@
         <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
         <!-- </intent-filter> -->
         <!-- </service> -->
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.shreyasrana.covidconnectionsbluetooth;
+package com.shreyasrana.covidconnectionsbluetooth.services;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.os.Message;
 import android.util.Log;
 
+import com.shreyasrana.covidconnectionsbluetooth.ui.MainActivity;
 import com.shreyasrana.covidconnectionsbluetooth.data.DataManager;
 
 import org.json.JSONException;

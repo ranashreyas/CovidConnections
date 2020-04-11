@@ -1,4 +1,4 @@
-package com.shreyasrana.covidconnectionsbluetooth;
+package com.shreyasrana.covidconnectionsbluetooth.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +21,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,6 +28,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import com.shreyasrana.covidconnectionsbluetooth.services.Covid19TrackerService;
+import com.shreyasrana.covidconnectionsbluetooth.R;
 import com.shreyasrana.covidconnectionsbluetooth.data.DataManager;
 import com.shreyasrana.covidconnectionsbluetooth.data.InvalidContextException;
 
@@ -113,11 +114,11 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
             String channelId  = getString(R.string.default_notification_channel_id);
-            String channelName = getString(R.string.default_notification_channel_name);
+            String topicName = getString(R.string.default_notification_topic_name);
             NotificationManager notificationManager =
                     getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(new NotificationChannel(channelId,
-                    channelName, NotificationManager.IMPORTANCE_LOW));
+                    topicName, NotificationManager.IMPORTANCE_LOW));
         }
 
         // If a notification message is tapped, any data accompanying the notification

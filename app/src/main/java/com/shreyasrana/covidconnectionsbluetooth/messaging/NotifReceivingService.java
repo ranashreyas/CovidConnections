@@ -28,7 +28,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.shreyasrana.covidconnectionsbluetooth.MainActivity;
+import com.shreyasrana.covidconnectionsbluetooth.ui.MainActivity;
 import com.shreyasrana.covidconnectionsbluetooth.R;
 
 import androidx.core.app.NotificationCompat;

@@ -1,4 +1,4 @@
-package com.shreyasrana.covidconnectionsbluetooth;
+package com.shreyasrana.covidconnectionsbluetooth.services;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -10,6 +10,7 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.shreyasrana.covidconnectionsbluetooth.ui.MainActivity;
 import com.shreyasrana.covidconnectionsbluetooth.data.DataManager;
 import com.shreyasrana.covidconnectionsbluetooth.data.InvalidContextException;
 
@@ -43,7 +44,7 @@ public class Covid19TrackerService extends JobIntentService {
     /**
      * Convenience method for enqueuing work in to this service.
      */
-    static void enqueueWork(Context context, Intent work,  MainActivity mainActivity) {
+    public static void enqueueWork(Context context, Intent work,  MainActivity mainActivity) {
         parent = mainActivity;
         Log.d("Covid19TrackerService", "enqueueWork");
         enqueueWork(context, Covid19TrackerService.class, JOB_ID, work);

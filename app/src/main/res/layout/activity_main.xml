@@ -9,7 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context="com.shreyasrana.covidconnectionsbluetooth.MainActivity">
+    tools:context="com.shreyasrana.covidconnectionsbluetooth.ui.MainActivity">
 
     <ListView
         android:id="@+id/lvNewDevices"
