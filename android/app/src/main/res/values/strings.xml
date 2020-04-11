@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CovidConnectionsBluetooth</string>
+    <string name="app_name">Covid Connections</string>
 
     <string name="msg_subscribed">Subscribed to Covid19 topic</string>
     <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
