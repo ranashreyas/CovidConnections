@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CovidConnectionsBluetooth</string>
+
+    <string name="msg_subscribed">Subscribed to Covid19 topic</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_topic_name" translatable="true">Covid19</string>
+
+    <string name="fcm_message">Covid19</string>
+</resources>
