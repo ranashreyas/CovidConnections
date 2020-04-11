@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "922756791877",
+    "firebase_url": "https://covid-tracer-c459a.firebaseio.com",
+    "project_id": "covid-tracer-c459a",
+    "storage_bucket": "covid-tracer-c459a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922756791877:android:6a929cc01f468e0181ed2c",
+        "android_client_info": {
+          "package_name": "com.shreyasrana.covidconnectionsbluetooth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922756791877-maefaah582oqqkvnftmrosd82jqggulm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2xScGYUXtqIndYqif9yHhCuXnvBkM3Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922756791877-maefaah582oqqkvnftmrosd82jqggulm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
