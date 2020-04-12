@@ -27,43 +27,38 @@ exports.sendNotif = functions.database.ref('/app_data/devices/{deviceId}/nearby_
       // // The array containing all the devices' tokens.
       // const results = await Promise.all([getNearbyDevicesPromise]);
 
-      const newVal = change.after.val();
-      if (newVal == null) {
-        console.log('No new nearby devices for ', {deviceId}, ', will bypass notifications.');
+      const nearbyDevices = change.after.val();
+      console.log('Nearby devices for ', context.params.deviceId, ', are ', nearbyDevices);
+
+      if (nearbyDevices == null) {
+        console.log('No new nearby devices for ', context.params.deviceId, ', will bypass notifications.');
         return admin.database().ref('app_data/lastnotified').set(context.timestamp);
       }
-      var deviceIds;
-      for(device in newVal){
-        deviceIds.push(device['deviceId']);
-        console.log("device token: ", admin.database().ref('/app_data/devices/'+device['deviceId']+'/device_token'));
-      }
 
+      nearbyDevices.forEach((nearbyDevice, index) => {
+        console.log('Looking up ', nearbyDevice);
+        console.log('Nearby device device id ', nearbyDevice.deviceId);
 
-      console.log('Next from change', newVal);
-      console.log('First value from change', newVal[0]);
-      console.log('First deviceId', deviceIds[0]);
+        const ref = change.after.ref.parent.ref.parent.child(nearbyDevice.deviceId);
+        ref.once("value", function(snapshot) {
+          var device = snapshot.val();
+          const deviceToken = device.device_token;
+          console.log('Sending notification to: ', deviceToken);
 
+          // var deviceTokens;
+          // deviceTokens.push(contents.device_token);
 
-      // let nearbyDevices;
-      // nearbyDevices = admin.database()
-      //     .ref('/app_data/devices/{deviceId}/nearby_devices');
-
-      // console.log('All tokens that need to be notified:', nearbyDevices);
-
-      // let nds;
-      // nds = nearbyDevices[0];
-
-      // console.log('All nearby devices:', nds);
-
-      admin.messaging().sendToTopic("Covid19", payload)
-        .then(function(response) {
-          console.log('Notification sent successfully:', response);
-        })
-        .catch(function(error) {
-          console.log('Notification sent failed:', error);
+          // This should be moved out of the once.
+          admin.messaging().sendToDevice(deviceToken, payload)
+            .then(function(response) {
+              console.log('Notification sent successfully:', response);
+            })
+            .catch(function(error) {
+              console.log('Notification sent failed:', error);
+            });
+        });
       });
 
-      
       // admin.messaging().sendToTopic("Covid19", payload)
       //   .then(function(response) {
       //     console.log('Notification sent successfully:', response);
@@ -71,7 +66,6 @@ exports.sendNotif = functions.database.ref('/app_data/devices/{deviceId}/nearby_
       //   .catch(function(error) {
       //     console.log('Notification sent failed:', error);
       // });
-
 
       // You must return a Promise when performing asynchronous tasks inside a Functions such as
       // writing to the Firebase Realtime Database.
