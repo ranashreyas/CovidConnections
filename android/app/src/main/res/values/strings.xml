@@ -8,4 +8,7 @@
     <string name="default_notification_topic_name" translatable="true">Covid19</string>
 
     <string name="fcm_message">Covid19</string>
+
+    <string
+        name="messageWithLink"><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">CDC COVID-19 more info</a></string>
 </resources>

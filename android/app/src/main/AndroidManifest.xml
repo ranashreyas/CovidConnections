@@ -26,6 +26,10 @@
 
         <activity android:name=".ui.MainActivity"/>
 
+        <activity
+            android:name=".ui.Pop"
+            android:theme="@style/AppTheme.CustomTheme" />
+
         <!-- [START fcm_default_icon] -->
         <!--
  Set custom default icon. This is used when no icon is set for incoming notification messages.
@@ -65,7 +69,7 @@
         <!-- <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/> -->
         <!-- </intent-filter> -->
         <!-- </service> -->
-        <activity android:name=".ui.MainActivity"></activity>
+
     </application>
 
 </manifest>

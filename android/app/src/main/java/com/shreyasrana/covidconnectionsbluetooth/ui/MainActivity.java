@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateFirebase(View v) {
+        startActivity(new Intent(MainActivity.this, Pop.class));
         notifyNearbyDevices();
     }
 

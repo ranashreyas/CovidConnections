@@ -193,15 +193,15 @@ public class Covid19TrackerService extends JobIntentService {
     // them messages.
     private void startDiscovery() {
         while (!mDone){
-            try{
-                parent.runOnUiThread(new Runnable() {
-                    public void run() {
-                        Toast.makeText(parent.getBaseContext(), "discovering devices", Toast.LENGTH_LONG).show();
-                    }
-                });
-            } catch (NullPointerException e){
-                e.printStackTrace();
-            }
+//            try{
+//                parent.runOnUiThread(new Runnable() {
+//                    public void run() {
+//                        Toast.makeText(parent.getBaseContext(), "discovering devices", Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//            } catch (NullPointerException e){
+//                e.printStackTrace();
+//            }
 
 //            Toast.makeText(getApplicationContext(), "discovering devices", Toast.LENGTH_LONG);
             discoverDevices();
