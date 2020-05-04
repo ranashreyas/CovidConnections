@@ -93,10 +93,10 @@ public class Covid19TrackerService extends JobIntentService {
                 if (device.getType() != BluetoothDevice.DEVICE_TYPE_LE) {
                     mBTDevices.add(device);
 
-                    Message msg = Message.obtain();
-                    msg.obj = mBTDevices;
-                    msg.setTarget(MainActivity.mDeviceListHandler);
-                    msg.sendToTarget();
+//                    Message msg = Message.obtain();
+//                    msg.obj = mBTDevices;
+//                    msg.setTarget(MainActivity.mDeviceListHandler);
+//                    msg.sendToTarget();
 
                     Log.d(TAG, "Discovered: " + device.getName() + " with address: " + device.getAddress() + " type: " + device.getType());
 
@@ -246,10 +246,10 @@ public class Covid19TrackerService extends JobIntentService {
         mBTConnectionMgr.startClient(targetDevice);
 
         // Update UI if exists.
-        Message msg = Message.obtain();
-        msg.obj = targetDevice.getAddress();
-        msg.setTarget(MainActivity.mSendingHandler);
-        msg.sendToTarget();
+//        Message msg = Message.obtain();
+//        msg.obj = targetDevice.getAddress();
+//        msg.setTarget(MainActivity.mSendingHandler);
+//        msg.sendToTarget();
     }
 
     @Override

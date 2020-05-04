@@ -38,16 +38,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
-    public static Handler mMessageHandler;
-    public static Handler mSendingHandler;
-    public static Handler mDeviceListHandler;
+//    public static Handler mMessageHandler;
+//    public static Handler mSendingHandler;
+//    public static Handler mDeviceListHandler;
 
 
-    private TextView rMessage;
-    private TextView rSend;
-    private Button rdiagnoseBtn;
-    private ListView lvNewDevices;
-
+//    private TextView rMessage;
+//    private TextView rSend;
+//    private Button rdiagnoseBtn;
+//    private ListView lvNewDevices;
+//
     private DeviceListAdapter mDeviceListAdapter;
     private DataManager mDataManager;
 
@@ -70,36 +70,37 @@ public class MainActivity extends AppCompatActivity {
         checkBTPermissions();
 
         // THIRD: Draw screen.
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_page);
+//        setContentView(R.layout.activity_main);
 
-        lvNewDevices = (ListView) findViewById(R.id.lvNewDevices);
-        rMessage = findViewById(R.id.rMessage);
-        rSend = findViewById(R.id.rSend);
-        rdiagnoseBtn = findViewById(R.id.diagnoseBtn);
+//        lvNewDevices = (ListView) findViewById(R.id.lvNewDevices);
+//        rMessage = findViewById(R.id.rMessage);
+//        rSend = findViewById(R.id.rSend);
+//        rdiagnoseBtn = findViewById(R.id.diagnoseBtn);
 
-        mMessageHandler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                String message = (String) msg.obj;
-                rMessage.setText("Received Message: " + message);
-            }
-        };
+//        mMessageHandler = new Handler(Looper.getMainLooper()) {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                String message = (String) msg.obj;
+//                rMessage.setText("Received Message: " + message);
+//            }
+//        };
 
-        mSendingHandler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                String message = (String) msg.obj;
-                rSend.setText("Sending To: " + message);
-            }
-        };
-        mDeviceListHandler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                ArrayList<BluetoothDevice> BTDevices = (ArrayList<BluetoothDevice>) msg.obj;
-                mDeviceListAdapter = new DeviceListAdapter(getApplicationContext(), R.layout.device_adapter_view, BTDevices);
-                lvNewDevices.setAdapter(mDeviceListAdapter);
-            }
-        };
+//        mSendingHandler = new Handler(Looper.getMainLooper()) {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                String message = (String) msg.obj;
+//                rSend.setText("Sending To: " + message);
+//            }
+//        };
+//        mDeviceListHandler = new Handler(Looper.getMainLooper()) {
+//            @Override
+//            public void handleMessage(Message msg) {
+//                ArrayList<BluetoothDevice> BTDevices = (ArrayList<BluetoothDevice>) msg.obj;
+//                mDeviceListAdapter = new DeviceListAdapter(getApplicationContext(), R.layout.device_adapter_view, BTDevices);
+//                lvNewDevices.setAdapter(mDeviceListAdapter);
+//            }
+//        };
     }
 
     private void initServices() {

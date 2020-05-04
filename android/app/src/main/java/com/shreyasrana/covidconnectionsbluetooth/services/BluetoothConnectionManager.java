@@ -87,10 +87,10 @@ public class BluetoothConnectionManager {
                     //This is a blocking call and will only return on a successful connection or an exception.
                     Log.d(TAG, "run: RFCOM server socket start......");
 
-                    Message msg = Message.obtain();
-                    msg.obj = "Waiting for new connection...";
-                    msg.setTarget(MainActivity.mMessageHandler);
-                    msg.sendToTarget();
+//                    Message msg = Message.obtain();
+//                    msg.obj = "Waiting for new connection...";
+//                    msg.setTarget(MainActivity.mMessageHandler);
+//                    msg.sendToTarget();
 
                     socket = mmServerSocket.accept();
 
@@ -230,10 +230,10 @@ public class BluetoothConnectionManager {
         String incomingMessage = new String(buffer, 0, bytes);
 
         Log.d(TAG, "Incoming message: " + incomingMessage);
-        Message msg = Message.obtain();
-        msg.obj = incomingMessage;
-        msg.setTarget(MainActivity.mMessageHandler);
-        msg.sendToTarget();
+//        Message msg = Message.obtain();
+//        msg.obj = incomingMessage;
+//        msg.setTarget(MainActivity.mMessageHandler);
+//        msg.sendToTarget();
 
         // Write this device to the database.
         DataManager dataManager = mTrackerService.getDataManager();
